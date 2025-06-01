@@ -1,6 +1,6 @@
 public class singleLinkedKist07 {
-    node07 head;
-    node07 tail;
+    Node07 head;
+    Node07 tail;
 
     boolean isEmpty(){
         return (head == null);
@@ -8,7 +8,7 @@ public class singleLinkedKist07 {
 
     public void print(){
         if (!isEmpty()){
-            node07 tmp = head;
+            Node07 tmp = head;
             System.out.println("Isi Linkes List:\t");
             while (tmp != null) {
                 tmp.data.tampil();
@@ -21,7 +21,7 @@ public class singleLinkedKist07 {
     }
 
     public void addFirst(mahasiswa07 input){
-        node07 ndInput = new node07(input, null);
+        Node07 ndInput = new Node07(input, null);
         if (isEmpty()){
             head = ndInput;
             tail = ndInput;
@@ -32,7 +32,7 @@ public class singleLinkedKist07 {
     }
 
     public void addLast(mahasiswa07 input){
-        node07 ndInput = new node07(input, null);
+        Node07 ndInput = new Node07(input, null);
         if (isEmpty()){
             head = ndInput;
             tail = ndInput;
@@ -43,8 +43,8 @@ public class singleLinkedKist07 {
     }
 
     public void insertAfter(String key, mahasiswa07 input){
-        node07 ndInput = new node07(input, null);
-        node07 temp = head;
+        Node07 ndInput = new Node07(input, null);
+        Node07 temp = head;
         do {
             if(temp.data.nama.equalsIgnoreCase(key)){
                 ndInput.next = temp.next;
@@ -64,11 +64,11 @@ public class singleLinkedKist07 {
         }else if (index == 0){
             addFirst(input);
         } else {
-            node07 temp = head;
+            Node07 temp = head;
             for (int i = 0; i < index - 1; i++){
                 temp = temp.next;
             }
-            temp.next = new node07(input, temp.next);
+            temp.next = new Node07(input, temp.next);
             if (temp.next.next == null){
                 tail = temp.next;
             }
@@ -76,7 +76,7 @@ public class singleLinkedKist07 {
     }
 
     public void getData(int index){
-        node07 tmp = head;
+        Node07 tmp = head;
         for (int i = 0; i < index; i++) {
             tmp = tmp.next;
         }
@@ -84,7 +84,7 @@ public class singleLinkedKist07 {
     }
 
     public int indexOf(String key){
-        node07 tmp = head;
+        Node07 tmp = head;
         int index = 0;
         while (tmp != null && !tmp.data.nama.equalsIgnoreCase(key)) {
             tmp = tmp.next;
@@ -114,7 +114,7 @@ public class singleLinkedKist07 {
         } else if (head == tail) {
             head = tail = null;
         } else {
-            node07 temp = head;
+            Node07 temp = head;
             while (temp.next != tail) {
                 temp = temp.next;
             }
@@ -127,7 +127,7 @@ public class singleLinkedKist07 {
         if (isEmpty()) {
             System.out.println("Linked List masih kosong, tidak dapat dihapus!");
         } else {
-            node07 temp = head;
+            Node07 temp = head;
             while (temp != null) {
                 if ((temp.data.nama.equalsIgnoreCase(key)) && (temp == head)) {
                     this.removeFirst();
@@ -148,7 +148,7 @@ public class singleLinkedKist07 {
         if (index == 0) {
             removeFirst();
         } else {
-            node07 temp = head;
+            Node07 temp = head;
             for (int i = 0; i < index - 1; i++) {
                 temp = temp.next;
             }
